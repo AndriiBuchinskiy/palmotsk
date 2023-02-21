@@ -4,19 +4,41 @@ namespace Palmo\app;
 
 class Organization
 {
-    private $nameOrganization;
+    protected string $nameOrganization;
 
-    private $inn;
+    protected int $inn;
 
-    private $kpp;
+    protected int $kpp;
 
-    private $addres;
-    private $directorFIO;
+    protected string $addres;
+    protected string $directorFIO;
 
 
-    public function __construct()
+
+    public function __construct($nameOrganization,$addres,$inn,$kpp,$directorFIO)
     {
-
+        $this->addres = $addres;
+        $this->directorFIO = $directorFIO;
+        $this->inn = $inn;
+        $this->kpp = $kpp;
+        $this->nameOrganization =$nameOrganization;
     }
+
+  public function getInn()
+  {
+      return $this->inn;
+  }
+
+  public function getKpp()
+  {
+      return $this->kpp;
+  }
+
+  public function getDirectorFIO(){
+        return $this->directorFIO;
+  }
+  public function getNameOrg(){
+        return $this->nameOrganization;
+  }
 
 }
